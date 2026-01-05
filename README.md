@@ -29,16 +29,12 @@ Custom application-layer protocol modeled after HTTP-style messages.
 - CHAT, QUIT
 
 ## Communication Model
+- Client–Server: non-persistent TCP
+- Peer–Peer: persistent TCP
+- Half-duplex chat (read/write alternation)
+- Graceful termination and FIN detection
 
-Client–Server: non-persistent TCP
-
-Peer–Peer: persistent TCP
-
-Half-duplex chat (read/write alternation)
-
-Graceful termination and FIN detection
-
-##Running (Mininet / Ubuntu)
+## Running (Mininet / Ubuntu)
 #### Start server
 python3 server.py --port=5555
 
@@ -53,7 +49,7 @@ python3 client.py --id=Bob --port=4000 --server=127.0.0.1:5555
 /bridge
 /chat
 
-##Key Features
+## Key Features
 - Custom TCP application protocol
 - State-driven client behavior (WAIT / CHAT)
 - Robust socket error handling
